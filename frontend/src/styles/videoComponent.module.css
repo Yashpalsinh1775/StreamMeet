@@ -92,3 +92,176 @@
   height: auto;
   border-radius: 20px;
 }
+
+/* Container for lobby */
+.meetContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 5%;
+  gap: 2rem;
+  min-height: 80vh;
+}
+
+/* Left panel (form + video preview) */
+.leftPanel {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.contentBox {
+  max-width: 400px;
+  width: 100%;
+}
+
+.joinBox {
+  display: flex;
+  gap: 1rem;
+}
+
+.joinBox .MuiTextField-root {
+  flex: 1;
+}
+
+/* Right panel (image) */
+.rightPanel {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.heroImage {
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Meeting screen */
+.meetVideoContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #000;
+  position: relative;
+}
+
+.meetUserVideo {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  background: #222;
+}
+
+.conferenceView {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.conferenceView video {
+  width: 300px;
+  max-width: 100%;
+  border-radius: 8px;
+  background: #111;
+}
+
+/* Control buttons at bottom */
+.buttonContainers {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Chat modal */
+.chatRoom {
+  position: absolute;
+  top: 10%;
+  right: 2%;
+  width: 300px;
+  max-height: 80vh;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.chatContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.chattingDisplay {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.chattingArea {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+/* 📱 Responsive */
+@media (max-width: 900px) {
+  /* Lobby becomes stacked */
+  .meetContainer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .joinBox {
+    flex-direction: column;
+  }
+
+  .heroImage {
+    max-width: 300px;
+    margin-top: 1.5rem;
+  }
+
+  /* Meeting layout */
+  .meetUserVideo {
+    max-height: 200px;
+  }
+
+  .conferenceView video {
+    width: 200px;
+  }
+
+  .chatRoom {
+    width: 80%;
+    right: 10%;
+  }
+}
+
+@media (max-width: 500px) {
+  .contentBox h2 {
+    font-size: 1.4rem;
+  }
+
+  .heroImage {
+    max-width: 220px;
+  }
+
+  .buttonContainers {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .conferenceView video {
+    width: 100%;
+  }
+
+  .chatRoom {
+    width: 95%;
+    right: 2.5%;
+    top: 5%;
+  }
+}
