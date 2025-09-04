@@ -93,7 +93,7 @@
   border-radius: 20px;
 }
 
-/* Container for lobby */
+/* ==== Lobby Screen ==== */
 .meetContainer {
   display: flex;
   align-items: center;
@@ -103,7 +103,6 @@
   min-height: 80vh;
 }
 
-/* Left panel (form + video preview) */
 .leftPanel {
   flex: 1;
   display: flex;
@@ -111,20 +110,20 @@
 }
 
 .contentBox {
-  max-width: 400px;
+  max-width: 420px;
   width: 100%;
 }
 
 .joinBox {
   display: flex;
   gap: 1rem;
+  margin-top: 1rem;
 }
 
 .joinBox .MuiTextField-root {
   flex: 1;
 }
 
-/* Right panel (image) */
 .rightPanel {
   flex: 1;
   display: flex;
@@ -133,62 +132,70 @@
 
 .heroImage {
   width: 100%;
-  max-width: 400px;
+  max-width: 420px;
+  height: auto;
+  object-fit: contain;
 }
 
-/* Meeting screen */
+/* ==== Meeting Screen ==== */
 .meetVideoContainer {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   background: #000;
   position: relative;
+  overflow-x: hidden;
 }
 
 .meetUserVideo {
   width: 100%;
-  max-height: 300px;
+  max-height: 280px;
   object-fit: cover;
   background: #222;
+  border-bottom: 2px solid #333;
 }
 
 .conferenceView {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1rem;
   padding: 1rem;
 }
 
 .conferenceView video {
-  width: 300px;
-  max-width: 100%;
+  width: 100%;
+  height: auto;
   border-radius: 8px;
   background: #111;
+  object-fit: cover;
 }
 
-/* Control buttons at bottom */
+/* ==== Control Buttons ==== */
 .buttonContainers {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 1rem;
   padding: 1rem;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.65);
+  position: sticky;
+  bottom: 0;
 }
 
-/* Chat modal */
+/* ==== Chat Modal ==== */
 .chatRoom {
   position: absolute;
   top: 10%;
   right: 2%;
-  width: 300px;
+  width: 320px;
   max-height: 80vh;
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  z-index: 10;
+  z-index: 20;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .chatContainer {
@@ -206,15 +213,17 @@
 .chattingArea {
   display: flex;
   gap: 0.5rem;
-  padding: 0.5rem;
+  padding: 0.75rem;
+  border-top: 1px solid #eee;
 }
 
-/* 📱 Responsive */
+/* ==== Responsive ==== */
 @media (max-width: 900px) {
-  /* Lobby becomes stacked */
+  /* Lobby stacked */
   .meetContainer {
     flex-direction: column;
     text-align: center;
+    padding: 1.5rem;
   }
 
   .joinBox {
@@ -222,41 +231,32 @@
   }
 
   .heroImage {
-    max-width: 300px;
+    max-width: 320px;
     margin-top: 1.5rem;
   }
 
-  /* Meeting layout */
+  /* Meeting adjustments */
   .meetUserVideo {
     max-height: 200px;
   }
 
-  .conferenceView video {
-    width: 200px;
-  }
-
   .chatRoom {
-    width: 80%;
-    right: 10%;
+    width: 85%;
+    right: 7.5%;
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .contentBox h2 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 
   .heroImage {
-    max-width: 220px;
+    max-width: 250px;
   }
 
-  .buttonContainers {
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  .conferenceView video {
-    width: 100%;
+  .conferenceView {
+    grid-template-columns: 1fr;
   }
 
   .chatRoom {
@@ -265,3 +265,4 @@
     top: 5%;
   }
 }
+
