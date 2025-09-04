@@ -162,3 +162,47 @@
   width: 100%;
   height: auto;
 }
+
+/* 📱 Responsive */
+@media (max-width: 900px) {
+  .landingMainContainer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .landingText h1 {
+    font-size: 2.2rem;
+  }
+
+  .landingImage img {
+    max-width: 300px;
+  }
+
+  .navlist {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 500px) {
+  nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .landingText h1 {
+    font-size: 1.8rem;
+  }
+
+  .landingText p {
+    font-size: 1rem;
+  }
+
+  .getStartedBtn {
+    padding: 0.6rem 1rem;
+  }
+
+  .landingImage img {
+    max-width: 250px;
+  }
+}
